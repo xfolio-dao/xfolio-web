@@ -93,3 +93,5 @@ export const getTokenLogoURL = (address: string):string => {
     const modifiedAddress = ethers.utils.getAddress(address)
     return `https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/${modifiedAddress}/logo.png`
 }
+
+export const toGwei = (wei:number) => Math.round(wei / 1000000000)

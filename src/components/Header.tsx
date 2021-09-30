@@ -7,7 +7,7 @@ import {setWallet} from '../reducers/walletReducer';
 import {Network} from '../types';
 import PopupMenu from './PopupMenu';
 import {headerStyle} from '../theme';
-
+import GasPrice from './GasPrice';
 
 const Header:React.FC = () => {
     const [currentNetwork,setCurrentNetwork] = useState<Network>('MAINNET')
@@ -34,6 +34,7 @@ const Header:React.FC = () => {
                         <Dropdown.Item as="button"  onClick={() => setCurrentNetwork('ARB_RINKEBY')}>ARB_Rinkeby</Dropdown.Item>
                     </DropdownButton>
                 </div>
+                <GasPrice/>
             </div>
         )
 
