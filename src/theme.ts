@@ -48,6 +48,7 @@ const theme = {
 }
 export const headerStyle = {
     display: 'flex',
+    flexDirection: 'column',
     justifyContent: 'center',
     alignItems:'center',
     width: '100%',
@@ -55,10 +56,10 @@ export const headerStyle = {
     borderBottom: '1px',
     borderBottomWidth: '1px',
     borderBottomStyle: 'solid',
-   // borderBottomColor: theme.colors.white,
-   borderImage: theme.colors.borderColor,
-   borderImageSlice: '1',
-   zIndex: 'auto',
+    // borderBottomColor: theme.colors.white,
+    borderImage: theme.colors.borderColor,
+    borderImageSlice: '1',
+    zIndex: 'auto',
 
     dropdownContainer: {
         display: 'flex',

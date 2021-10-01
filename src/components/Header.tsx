@@ -7,7 +7,7 @@ import {setWallet} from '../reducers/walletReducer';
 import {Network} from '../types';
 import PopupMenu from './PopupMenu';
 import {headerStyle} from '../theme';
-
+import GasPrice from './GasPrice';
 
 const Header:React.FC = () => {
     const [currentNetwork,setCurrentNetwork] = useState<Network>('MAINNET')
@@ -23,7 +23,8 @@ const Header:React.FC = () => {
     },[currentNetwork])
 
     return (
-            <div style={headerStyle as React.CSSProperties} id='headerContainer'>
+        <div style={headerStyle as React.CSSProperties} id='headerContainer'>
+            <div >
                 <PopupMenu/>
                 <div>
                     <DropdownButton title={currentNetwork} style={headerStyle.dropdownContainer} drop='down'>
@@ -35,6 +36,8 @@ const Header:React.FC = () => {
                     </DropdownButton>
                 </div>
             </div>
+            <GasPrice/>
+        </div>
         )
 
 }
