@@ -23,7 +23,8 @@ const Header:React.FC = () => {
     },[currentNetwork])
 
     return (
-            <div style={headerStyle as React.CSSProperties} id='headerContainer'>
+        <div style={headerStyle as React.CSSProperties} id='headerContainer'>
+            <div >
                 <PopupMenu/>
                 <div>
                     <DropdownButton title={currentNetwork} style={headerStyle.dropdownContainer} drop='down'>
@@ -34,8 +35,9 @@ const Header:React.FC = () => {
                         <Dropdown.Item as="button"  onClick={() => setCurrentNetwork('ARB_RINKEBY')}>ARB_Rinkeby</Dropdown.Item>
                     </DropdownButton>
                 </div>
-                <GasPrice/>
             </div>
+            <GasPrice/>
+        </div>
         )
 
 }

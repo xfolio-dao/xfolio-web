@@ -38,10 +38,10 @@ const GasPrice:React.FC = () => {
     },[lastJsonMessage])
 
     return(
-        <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-between'}}>
-            <span style={commonStyles.tileText}>R: {toGwei(gasData.rapid)}</span>
-            <span style={commonStyles.tileText}>F: {toGwei(gasData.fast)}</span>
-            <span style={commonStyles.tileText}> St: {toGwei(gasData.standard)}</span>
+        <div>
+            <span style={commonStyles.tileText}>R: {toGwei(gasData.rapid)}  </span>
+            <span style={commonStyles.tileText}>F: {toGwei(gasData.fast)}  </span>
+            <span style={commonStyles.tileText}> St: {toGwei(gasData.standard)}  </span>
             <span style={commonStyles.tileText}> Sl: {toGwei(gasData.slow)}</span>
         </div>
     )
