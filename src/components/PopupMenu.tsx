@@ -1,7 +1,7 @@
 import React from 'react'
 import Popup from 'reactjs-popup';
 import theme from '../theme';
-import {NavLink} from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const styles = {
     contentStyle: {
@@ -57,7 +57,7 @@ const styles = {
     }
 }
 
-const Menu:React.FC<{close:any}> = ({close}) => {
+const Menu:React.FC<{close:any}> = ({ close }) => {
     return(
         <div style={styles.menu as React.CSSProperties}>
             <ul style = {styles.menuList as React.CSSProperties}>
@@ -94,19 +94,19 @@ const PopupMenu:React.FC = () => {
             //No idea why but if you pass a React.FC to trigger it does not respond to a click
             //so had to built out a whole components inside of the Popup
             trigger={ (open) => {
-                const b1Style = (open) ? {...styles.burgerBar,...styles.openBar1} : styles.burgerBar
-                const b2Style = (open) ? {...styles.burgerBar,...styles.openBar2} : styles.burgerBar
-                const b3Style = (open) ? {...styles.burgerBar,...styles.openBar3} : styles.burgerBar
+                const b1Style = (open) ? { ...styles.burgerBar,...styles.openBar1 } : styles.burgerBar
+                const b2Style = (open) ? { ...styles.burgerBar,...styles.openBar2 } : styles.burgerBar
+                const b3Style = (open) ? { ...styles.burgerBar,...styles.openBar3 } : styles.burgerBar
                 return (
-                <div style={styles.burgerMenu as React.CSSProperties}>
-                    <div key="b1" style={b1Style}/>
-                    <div key="b2" style={b2Style}/>
-                    <div key="b3" style={b3Style}/>
-                </div>)
+                    <div style={styles.burgerMenu as React.CSSProperties}>
+                        <div key="b1" style={b1Style}/>
+                        <div key="b2" style={b2Style}/>
+                        <div key="b3" style={b3Style}/>
+                    </div>)
             }}
             closeOnDocumentClick={true}
             contentStyle={styles.contentStyle}
-            overlayStyle={{ background: "rgba(51,51,51,0)", position: 'absolute', top:"0",width:"400px",height:"500px"}}
+            overlayStyle={{ background: "rgba(51,51,51,0)", position: 'absolute', top:"0",width:"400px",height:"500px" }}
         >
             {(close: any) => <Menu close={close} />}
         </Popup>

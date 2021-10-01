@@ -1,0 +1,5 @@
+build
+node_modules
+generated
+src/__tests__
+src/components/TokenSwap

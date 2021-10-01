@@ -1,7 +1,7 @@
-import {Wallet} from 'ethers'
-import {Synth} from '@synthetixio/js';
+import { Wallet } from 'ethers'
+import { Synth } from '@synthetixio/js'
 
-//Crypto entities
+// Crypto entities
 export type Id = string
 export type DataSource = 'UNI' | 'SYNTH'
 export type Network = 'KOVAN' | 'ARBITRUM' | 'MAINNET' | 'RINKEBY' | 'ARB_RINKEBY'
@@ -33,7 +33,7 @@ export interface BasicToken extends TokenEntry{
     symbol: string
 }
 
-type NoDerivedETHBasicToken = Omit<BasicToken, "derivedETH">
+type NoDerivedETHBasicToken = Omit<BasicToken, 'derivedETH'>
 
 export interface ExtendedTokenEntry extends BasicToken {
     untrackedVolumeUSD: string,
@@ -73,7 +73,7 @@ export interface Bundle {
 }
 
 // export type NetworkString = keyof typeof Network
-//Fetched data entities based on crypto entities
+// Fetched data entities based on crypto entities
 
 export interface TokenData {
     tokens: BasicToken[]
@@ -126,7 +126,7 @@ export interface SynthDataExtended {
     dailyVolumeInUSD: number
 }
 
-//Redux states and actions
+// Redux states and actions
 export interface ETHAction {
     type: 'SET_ETH_PRICE',
     data: number
@@ -141,7 +141,7 @@ export interface SNXAction {
     data: number
 }
 
-export interface  SNXState {
+export interface SNXState {
     price: number
 }
 
@@ -186,7 +186,7 @@ export interface WatchlistState {
 }
 
 export interface WatchlistAction {
-    type: "ADD_WATCHLIST_ENTRY" | "REMOVE_WATCHLIST_ENTRY",
+    type: 'ADD_WATCHLIST_ENTRY' | 'REMOVE_WATCHLIST_ENTRY',
     data: WatchlistEntry
 }
 
@@ -195,6 +195,6 @@ export interface PortfolioState {
 }
 
 export interface PortfolioAction {
-    type: "ADD_PORTFOLIO_ENTRY" | "REMOVE_PORTFOLIO_ENTRY",
+    type: 'ADD_PORTFOLIO_ENTRY' | 'REMOVE_PORTFOLIO_ENTRY',
     data: WatchlistEntry
 }

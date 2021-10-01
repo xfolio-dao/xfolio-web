@@ -1,22 +1,22 @@
-import {SeedAction, SeedState} from '../types';
+import { SeedAction, SeedState } from '../types'
 
 const initialState:SeedState = {
     seed: ''
 }
 
-//Reducer
-const seedReducer= (state:SeedState = initialState, action:SeedAction) => {
+// Reducer
+const seedReducer = (state:SeedState = initialState, action:SeedAction):SeedState => {
     switch (action.type) {
-        case 'SET_SEED':
-            return {
-                seed: action.data
-            }
-        default:
-            return state
+    case 'SET_SEED':
+        return {
+            seed: action.data
+        }
+    default:
+        return state
     }
 }
 
-//Actions
+// Actions
 export const setSeed = (seed:string):SeedAction => {
     return {
         type: 'SET_SEED',

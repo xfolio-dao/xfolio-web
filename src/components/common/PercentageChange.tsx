@@ -1,7 +1,7 @@
 import React from 'react'
-import {commonStyles} from '../../theme';
+import { commonStyles } from '../../theme';
 
-const PercentageChange:React.FC<{currentValue:number,previousValue:number}> = ({currentValue,previousValue}) => {
+const PercentageChange:React.FC<{currentValue:number,previousValue:number}> = ({ currentValue,previousValue }) => {
     if (previousValue === 0) return <div style={commonStyles.tileText}>-</div>
     const pricePercDiff = 100 * ((currentValue - previousValue) / ((currentValue + previousValue) / 2))
     const displayedDiff = Math.abs(pricePercDiff).toFixed(2)

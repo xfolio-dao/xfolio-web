@@ -1,12 +1,12 @@
-import React, {useState,useEffect} from 'react'
-import {Wallet} from 'ethers'
-import {RootStateOrAny, useSelector} from 'react-redux';
+import React, { useState,useEffect } from 'react'
+import { Wallet } from 'ethers'
+import { RootStateOrAny, useSelector } from 'react-redux';
 import LoadingScreen from '../LoadingScreen';
-import {getCurrentBalance} from '../../utils/ethersTools';
-import theme, {commonStyles} from '../../theme';
+import { getCurrentBalance } from '../../utils/ethersTools';
+import theme, { commonStyles } from '../../theme';
 import TouchableLink from '../common/TouchableLink';
-import {useETHPrice} from '../../graphql/uniQueries';
-import {toMoney} from '../../utils'
+import { useETHPrice } from '../../graphql/uniQueries';
+import { toMoney } from '../../utils'
 
 const styles = {
     mainText: {
@@ -27,7 +27,7 @@ const WalletDisplay:React.FC = () => {
     const wallet:Wallet = useSelector((state:RootStateOrAny) => state.wallet.wallet)
     const [currentBalance,setCurrentBalance] = useState<number>(0)
     const [isLoading,setIsLoading] = useState<boolean>(true)
-    const {data:ethPriceData, isFetching} = useETHPrice()
+    const { data:ethPriceData } = useETHPrice()
 
     useEffect(() => {
         const updateCurrentBalance = async () => {
@@ -41,26 +41,26 @@ const WalletDisplay:React.FC = () => {
 
     if (isLoading) return <LoadingScreen placeholder='Loading wallet data...'/>
     return(
-            <div style={{...commonStyles.innerContainer as React.CSSProperties, justifyContent: 'space-around'}} id='innerContainer'>
-                <div>
-                    <div style={{...commonStyles.mainText as React.CSSProperties,cursor:'pointer'}}
-                         onClick={() => {
-                            navigator.clipboard.writeText(wallet.address).then(() => {
-                                alert('Wallet address copied!')
-                            },(error) => {
-                                console.error(error)
-                            })
+        <div style={{ ...commonStyles.innerContainer as React.CSSProperties, justifyContent: 'space-around' }} id='innerContainer'>
+            <div>
+                <div style={{ ...commonStyles.mainText as React.CSSProperties,cursor:'pointer' }}
+                    onClick={() => {
+                        navigator.clipboard.writeText(wallet.address).then(() => {
+                            alert('Wallet address copied!')
+                        },(error) => {
+                            console.error(error)
+                        })
                     }}>{wallet.address.slice(0,15) + '...'}</div>
-                    <div style={styles.mainText as React.CSSProperties}>{(currentBalance === 0) ? currentBalance : currentBalance.toFixed(5)} ETH</div>
-                    {/*//Displaying current Balance in USD*/}
-                    { ethPriceData && (
-                        <div style={styles.secondaryText as React.CSSProperties}>{toMoney(currentBalance*ethPriceData,2)}</div>
-                    )}
-                </div>
-                <div>
-                    <TouchableLink style={commonStyles.largeButton as React.CSSProperties} text='BRIDGE ETH' link='/main/bridgeETH' disabled={false}/>
-                </div>
+                <div style={styles.mainText as React.CSSProperties}>{(currentBalance === 0) ? currentBalance : currentBalance.toFixed(5)} ETH</div>
+                {/*//Displaying current Balance in USD*/}
+                { ethPriceData && (
+                    <div style={styles.secondaryText as React.CSSProperties}>{toMoney(currentBalance*ethPriceData,2)}</div>
+                )}
             </div>
+            <div>
+                <TouchableLink style={commonStyles.largeButton as React.CSSProperties} text='BRIDGE ETH' link='/main/bridgeETH' disabled={false}/>
+            </div>
+        </div>
     )
 }
 

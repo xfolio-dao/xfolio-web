@@ -1,5 +1,5 @@
-import {generateUniTrade} from '../utils/simpleUniTools'
-import {ChainId} from 'simple-uniswap-sdk'
+import { generateUniTrade } from '../utils/simpleUniTools'
+import { ChainId } from 'simple-uniswap-sdk'
 
 describe('generateUniTrade',() => {
     it('outputs an UniswapTrade', async () => {

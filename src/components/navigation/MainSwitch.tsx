@@ -1,5 +1,5 @@
 import React from 'react'
-import {Switch, Route, useRouteMatch} from 'react-router-dom'
+import { Switch, Route, useRouteMatch } from 'react-router-dom'
 import BridgeETH from '../BridgeETH'
 import WalletDisplay from '../Portfolio/WalletDisplay'
 import Watchlist from '../Watchlist'
@@ -8,7 +8,7 @@ import TokenSwap from '../TokenSwap'
 import Header from '../Header'
 
 const MainSwitch:React.FC = () => {
-    const {path} = useRouteMatch()
+    const { path } = useRouteMatch()
     console.log(path)
 
     return(

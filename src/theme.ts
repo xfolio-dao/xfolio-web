@@ -11,7 +11,7 @@ const theme = {
         mainBackground: '#e1e4e8',
         green: '#46c41b',
         darkBrown: '#140d07',
-        white: "#FFFFFF",
+        white: '#FFFFFF',
         lightRed: 'indianred',
         borderColor: 'linear-gradient(to right bottom, #402ce0, #0de2c5)',
         buttonColor: 'linear-gradient(180deg, black, transparent)',
@@ -20,7 +20,7 @@ const theme = {
     },
     fontWeights: {
         normal: 400,
-        bold: 700,
+        bold: 700
     },
     distance: {
         extraLarge: '40px',
@@ -32,7 +32,7 @@ const theme = {
     fontsize: {
         extraSmall: 12,
         small: 15,
-        normal : 20,
+        normal: 20,
         big: 25,
         large: 30,
         extraLarge: 35
@@ -43,22 +43,21 @@ const theme = {
     fontLink: {
         fontFamilyText: 'Montserrat, sans-serif',
         fontFamilyLabel: 'Teko, sans-serif'
-      },
-    
+    }
 }
 export const headerStyle = {
     display: 'flex',
     justifyContent: 'center',
-    alignItems:'center',
+    alignItems: 'center',
     width: '100%',
-    height:'15%',
+    height: '15%',
     borderBottom: '1px',
     borderBottomWidth: '1px',
     borderBottomStyle: 'solid',
-   // borderBottomColor: theme.colors.white,
-   borderImage: theme.colors.borderColor,
-   borderImageSlice: '1',
-   zIndex: 'auto',
+    // borderBottomColor: theme.colors.white,
+    borderImage: theme.colors.borderColor,
+    borderImageSlice: '1',
+    zIndex: 'auto',
 
     dropdownContainer: {
         display: 'flex',
@@ -88,27 +87,27 @@ export const commonStyles = {
         alignItems: 'center'
     },
     mainText: {
-        color:theme.colors.textWhite,
+        color: theme.colors.textWhite,
         fontSize: theme.fontsize.big,
         textAlign: 'center',
         fontFamily: theme.fontLink.fontFamilyText
     },
     secondaryText: {
-        color:theme.colors.textSecondary,
+        color: theme.colors.textSecondary,
         fontSize: theme.fontsize.big,
         textAlign: 'center',
         fontFamily: theme.fontLink.fontFamilyText
     },
     whiteCenteredText: {
-        color:theme.colors.textWhite,
+        color: theme.colors.textWhite,
         textAlign: 'center'
     },
     textPlaceholder: {
         color: theme.colors.textWhite,
         fontSize: theme.fontsize.big,
-        textAlign: "center"
+        textAlign: 'center'
     },
-    tile:{
+    tile: {
         backgroundColor: theme.colors.background,
         display: 'flex',
         flexDirection: 'row',
@@ -125,7 +124,7 @@ export const commonStyles = {
     },
     nameText: {
         color: theme.colors.textSecondary,
-        fontSize: theme.fontsize.small,
+        fontSize: theme.fontsize.small
     },
     positivePercentage: {
         color: theme.colors.green,
@@ -136,13 +135,13 @@ export const commonStyles = {
         fontSize: theme.fontsize.normal
     },
     nameContainer: {
-        display: "flex",
-        flexDirection:"column"
+        display: 'flex',
+        flexDirection: 'column'
     },
-    buttonStyleTL:{
+    buttonStyleTL: {
         marginBottom: theme.distance.big,
         fontSize: theme.fontsize.large,
-        borderRadius: theme.distance.tiny,   
+        borderRadius: theme.distance.tiny,
         background: theme.colors.buttonColor,
         borderWidth: '2px',
         borderStyle: 'solid',
@@ -150,7 +149,7 @@ export const commonStyles = {
         borderImageSlice: '1'
     },
     largeButton: {
-        width:'300px',
+        width: '300px',
         boxShadow: '0 0 50px rgba(255, 255, 255, 0.5)',
         fontFamily: theme.fontLink.fontFamilyLabel,
         fontSize: theme.fontsize.large,
@@ -161,35 +160,35 @@ export const commonStyles = {
         borderImageSlice: '1'
     },
     normalButton: {
-        fontFamily:theme.fontLink.fontFamilyText,
+        fontFamily: theme.fontLink.fontFamilyText,
         fontSize: theme.fontsize.extraSmall,
         background: theme.colors.buttonColor,
         borderWidth: '2px',
         borderStyle: 'solid',
         borderImage: theme.colors.borderColor,
-        borderImageSlice: '1'  
+        borderImageSlice: '1'
     },
     textBox: {
         fontFamily: theme.fontLink.fontFamilyText,
         fontSize: theme.fontsize.small,
-        marginBottom:theme.distance.normal,
-        height:theme.distance.extraLarge,
-        marginTop:theme.distance.normal
+        marginBottom: theme.distance.normal,
+        height: theme.distance.extraLarge,
+        marginTop: theme.distance.normal
 
     },
     tokenSwapDrop: {
-        display:'flex',
-        flexDirection:'row',
-        alignItems:'center',
+        display: 'flex',
+        flexDirection: 'row',
+        alignItems: 'center',
         justifyContent: 'space-around',
         left: '15px'
     },
     backButton: {
-        position:'fixed', 
-        top:'10px', 
-        left:'10px', 
-        color:'white', 
-        fontSize:'45px'
+        position: 'fixed',
+        top: '10px',
+        left: '10px',
+        color: 'white',
+        fontSize: '45px'
     }
 }
 
