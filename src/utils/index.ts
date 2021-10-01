@@ -92,3 +92,4 @@ export const transformUNIQuotesToTokenListEntry = (tokensNow:BasicToken[], token
         }
     })
 }
+export const toGwei = (wei:number):number => Math.round(wei / 1000000000)

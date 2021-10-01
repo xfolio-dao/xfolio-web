@@ -26,7 +26,8 @@
         "no-use-before-define": "off",
         "@typescript-eslint/no-use-before-define": ["error"],
         "@typescript-eslint/ban-ts-comment": ["warn"],
-        "object-curly-spacing": ["error","always"]
+        "object-curly-spacing": ["error","always"],
+        "react/prop-types": "off"
     },
     "settings": {
         "react": {
