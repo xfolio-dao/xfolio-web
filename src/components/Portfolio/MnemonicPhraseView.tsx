@@ -26,15 +26,15 @@ const styles = {
 }
 
 
-const MnemonicPhraseView:React.FC<{phrase: string| undefined}> = ({phrase}) => {
+const MnemonicPhraseView:React.FC<{phrase: string| undefined}> = ({ phrase }) => {
     if (!phrase) return null
     const mnemonicPhrase = phrase.split(" ",12)
     return(
         <div style={styles.container as React.CSSProperties}>
             {mnemonicPhrase.map(w => {
                 return  <div style={styles.word} key={w}>
-                        {w}
-                        </div>
+                    {w}
+                </div>
             })}
         </div>
     )

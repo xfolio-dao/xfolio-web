@@ -1,13 +1,13 @@
-import React, {useState,useEffect} from 'react'
-import {Formik} from 'formik';
+import React, { useState,useEffect } from 'react'
+import { Formik } from 'formik';
 import LoadingScreen from '../LoadingScreen';
-import {useDispatch} from 'react-redux';
-import {createWalletFromMnemonic} from '../../utils/ethersTools';
+import { useDispatch } from 'react-redux';
+import { createWalletFromMnemonic } from '../../utils/ethersTools';
 import MnemonicPhraseView from './MnemonicPhraseView';
-import {useHistory} from 'react-router';
-import {setWallet} from '../../reducers/walletReducer';
-import {Button} from 'react-bootstrap';
-import theme, {commonStyles} from '../../theme';
+import { useHistory } from 'react-router';
+import { setWallet } from '../../reducers/walletReducer';
+import { Button } from 'react-bootstrap';
+import theme, { commonStyles } from '../../theme';
 import BackButton from '../BackButton'
 
 const MnemonicImport:React.FC = () => {
@@ -35,19 +35,19 @@ const MnemonicImport:React.FC = () => {
     return(
         <React.Fragment>
             <BackButton/>
-            <Formik initialValues={{phraseWord:''}} onSubmit={onSubmit}>
-                {({handleSubmit}) => (
-                    <form onSubmit={handleSubmit} style={{...commonStyles.outerContainer as React.CSSProperties, justifyContent:'space-evenly'}}>
-                        <div style={{display:'flex', flexDirection:'column', alignItems: 'center'}}>
-                            <h2 style={{textAlign:'center',color:theme.colors.textWhite, fontSize:theme.fontsize.extraLarge,
-                                fontFamily:theme.fontLink.fontFamilyLabel}}>Type in the mnemonic phrase:
+            <Formik initialValues={{ phraseWord:'' }} onSubmit={onSubmit}>
+                {({ handleSubmit }) => (
+                    <form onSubmit={handleSubmit} style={{ ...commonStyles.outerContainer as React.CSSProperties, justifyContent:'space-evenly' }}>
+                        <div style={{ display:'flex', flexDirection:'column', alignItems: 'center' }}>
+                            <h2 style={{ textAlign:'center',color:theme.colors.textWhite, fontSize:theme.fontsize.extraLarge,
+                                fontFamily:theme.fontLink.fontFamilyLabel }}>Type in the mnemonic phrase:
                             </h2>
                             <input
                                 name='phraseWorld'
                                 type='text'
                                 autoCapitalize='none'
                                 readOnly={isReadOnly}
-                                style={{...commonStyles.textBox as React.CSSProperties, width:'350px'}}
+                                style={{ ...commonStyles.textBox as React.CSSProperties, width:'350px' }}
                                 placeholder='Input your mnemonic...'
                                 onChange={(event) => {
                                     const val = event.target.value

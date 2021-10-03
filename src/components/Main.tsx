@@ -1,6 +1,5 @@
 import React from 'react'
-import {Switch, Route, Redirect} from 'react-router-dom';
-import theme from '../theme';
+import { Switch, Route, Redirect } from 'react-router-dom'
 import AuthorizationSwitch from './navigation/AuthorizationSwitch'
 import MainSwitch from './navigation/MainSwitch'
 
@@ -11,7 +10,7 @@ const mainStyle = {
     position: 'relative',
     height: '500px',
     width: '400px',
-   // backgroundColor: theme.colors.background,
+    // backgroundColor: theme.colors.background,
     background: 'linear-gradient(180deg, black, #1b436d)'
 }
 

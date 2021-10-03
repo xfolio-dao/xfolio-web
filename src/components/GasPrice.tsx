@@ -13,27 +13,24 @@ interface GasData {
 const GasPrice:React.FC = () => {
 
     const socketUrl = 'wss://gasgas.io/prices'
-
+    const initialState: GasData = { rapid:0,fast:0,slow:0, standard:0 } 
     const {
-        lastMessage,
         lastJsonMessage,
-        readyState,
-        getWebSocket
-      } = useWebSocket(socketUrl, {
+    } = useWebSocket(socketUrl, {
         onOpen: () => console.log('opened'),
         //Will attempt to reconnect on all close events, such as server shutting down
-        shouldReconnect: (closeEvent:Event) => true,
+        shouldReconnect: () => true,
         retryOnError: true
-      });
+    });
 
     // const ws = new WebSocket('wss://www.gasnow.org/ws')
 
-    const [gasData,setGasData] = useState({rapid:0,fast:0,slow:0,standard:0})
+    const [gasData,setGasData] = useState(initialState)
 
     useEffect(() => {
         console.log(lastJsonMessage)
         if (lastJsonMessage) {
-            setGasData({...lastJsonMessage.data})
+            setGasData({ ...lastJsonMessage.data })
         }
     },[lastJsonMessage])
 

@@ -1,8 +1,8 @@
 import React from 'react'
-import {Formik, Form, Field,useField} from 'formik';
-import theme, {commonStyles} from '../../theme';
+import { Formik, Form } from 'formik';
+import { commonStyles } from '../../theme';
 import * as yup from 'yup'
-import {Button} from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 import FormikTextInput from '../common/FormikTextInput'
 import BackButton from '../BackButton'
 
@@ -17,42 +17,43 @@ const validationSchema = yup.object().shape({
         .oneOf([yup.ref('password'), null],'Passwords must match')
 })
 
-const styles = {
-    passwordContainer: {
-        display: 'flex',
-        flexDirection:'column',
-        justifyContent:'space-around',
-        width: '300px',
-    },
-    errorText: {
-        marginLeft: theme.distance.tiny,
-        color: theme.colors.warning,
-        fontFamily: theme.fontLink.fontFamilyText
-    }
-}
+// const styles = {
+//     passwordContainer: {
+//         display: 'flex',
+//         flexDirection:'column',
+//         justifyContent:'space-around',
+//         width: '300px',
+//     },
+//     errorText: {
+//         marginLeft: theme.distance.tiny,
+//         color: theme.colors.warning,
+//         fontFamily: theme.fontLink.fontFamilyText
+//     }
+// }
 
 
-const PasswordInput:React.FC<{onSubmit: ({password}: {password:string}) => Promise<void>}> = ({onSubmit}) => {
+// eslint-disable-next-line no-unused-vars
+const PasswordInput:React.FC<{onSubmit: ({ password }: {password:string}) => Promise<void>}> = ({ onSubmit }) => {
     return(
         <React.Fragment> 
-        <BackButton/>
-        <Formik  onSubmit={onSubmit} initialValues={{password:'', passwordConfirmation: ''}} validationSchema={validationSchema}>
-            <Form style={{...commonStyles.outerContainer as React.CSSProperties, width:'300px', height:'300px'}}>
-                <div style={{position: 'fixed', top: '50px'}}>
-                    <div>
-                        <FormikTextInput name='password' placeholder='Input your password here...' type='password'
-                            style={{...commonStyles.textBox as React.CSSProperties, width:'300px'}}
-                        />
+            <BackButton/>
+            <Formik  onSubmit={onSubmit} initialValues={{ password:'', passwordConfirmation: '' }} validationSchema={validationSchema}>
+                <Form style={{ ...commonStyles.outerContainer as React.CSSProperties, width:'300px', height:'300px' }}>
+                    <div style={{ position: 'fixed', top: '50px' }}>
+                        <div>
+                            <FormikTextInput name='password' placeholder='Input your password here...' type='password'
+                                style={{ ...commonStyles.textBox as React.CSSProperties, width:'300px' }}
+                            />
+                        </div>
+                        <div>
+                            <FormikTextInput name='passwordConfirmation' placeholder='Confirm your password...' type='password'
+                                style={{ ...commonStyles.textBox as React.CSSProperties, width:'300px' }}
+                            />
+                        </div>
                     </div>
-                    <div>
-                        <FormikTextInput name='passwordConfirmation' placeholder='Confirm your password...' type='password'
-                            style={{...commonStyles.textBox as React.CSSProperties, width:'300px'}}
-                        />
-                    </div>
-                </div>
-                <Button type='submit' style={{...commonStyles.largeButton, position: 'fixed',top: '375px'}}>Submit</Button>
-            </Form>
-        </Formik>
+                    <Button type='submit' style={{ ...commonStyles.largeButton, position: 'fixed',top: '375px' }}>Submit</Button>
+                </Form>
+            </Formik>
         </React.Fragment>
 
     )

@@ -22,7 +22,7 @@ const styles = {
     }
 }
 
-const LoadingScreen:React.FC<{placeholder:string}> = ({placeholder}) => {
+const LoadingScreen:React.FC<{placeholder:string}> = ({ placeholder }) => {
     return(
         <div style={styles.container as React.CSSProperties}>
             <span style={styles.loadingText}>{placeholder}</span>
